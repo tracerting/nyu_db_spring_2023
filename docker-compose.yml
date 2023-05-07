@@ -1,0 +1,25 @@
+# check your version: https://docs.docker.com/compose/compose-file/
+version: "3.7"
+
+
+services:
+    server:
+        # look for dockerfile and build the container
+        build: ./server
+        container_name:  server
+        volumes:
+            - './server:/server'
+        ports:
+            - "5000:5000"
+
+    client:
+        build: ./client
+        container_name:  client
+        restart: always
+        #  mount the volumes so we can change code and hot reload
+        volumes:
+            - './client:/client'
+
+        #  port allows the host machine to link to container
+        ports:
+            - "80:80"

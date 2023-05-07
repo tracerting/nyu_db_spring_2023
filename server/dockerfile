@@ -1,0 +1,17 @@
+# use python container image
+FROM python:3.6-stretch
+
+# set the working directory of the image filesystem
+WORKDIR /server
+
+# copy current directory to the working directory
+ADD . /server
+
+# Install the python dependencies
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+
+ENTRYPOINT [ "python" ]
+CMD ["app.py" ]
