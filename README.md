@@ -1,4 +1,4 @@
-# My Docker Compose Setup
+# Final DB Project Set up Guide
 
 This repository contains a Docker Compose setup for running my application in a local development environment. The setup consists of two containers: one for the application itself and one for the database it uses.
 
